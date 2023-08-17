@@ -1,16 +1,14 @@
 function decimalToBinary(num) {
-  //Write you code here 
-	let ans=[];
-	while(num>0){
-		ans.push(num%2);
-		num=Math.floor(num/2)
-	}
-  let ansnum=0;
-  for(i=ans.length-1;i>=0;i--){
-	  ansnum=ansnum*10+ans[i];
-  }	
+    if (num === 0) {
+        return '0'; // Special case for input 0
+    }
 
-return num;	
+    let binary = '';
+    while (num > 0) {
+        binary = (num % 2) + binary;
+        num = Math.floor(num / 2);
+    }
+    return binary;
 }
 
 window.decimalToBinary = decimalToBinary;
